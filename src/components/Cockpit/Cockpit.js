@@ -1,38 +1,32 @@
 import React from "react";
 import "./Cockpit.css";
+import Aux from "../../hoc/Aux";
+import classes from "./Cockpit.css";
 
 const cockpit = props => {
-  let classes = [];
-
-  const style = {
-    backgroundColor: "green",
-    color: "white",
-    font: "inherit",
-    border: "1px solid blue",
-    padding: "8px",
-    cursor: "pointer"
-  };
+  const assignedClasses = [];
+  let btnClass = classes.Button;
 
   if (props.showPersons) {
-    style.backgroundColor = "red";
+    btnClass = [classes.Button, classes.Red].join(" ");
   }
 
   if (props.persons.length <= 2) {
-    classes.push("red");
+    assignedClasses.push(classes.Red);
   }
 
   if (props.persons.length <= 1) {
-    classes.push("bold");
+    assignedClasses.push(classes.bold);
   }
 
   return (
-    <div className="Cockpit">
-      <h1>Persons</h1>
-      <p className={classes.join(" ")}>This is working</p>
-      <button style={style} onClick={props.clicked}>
+    <Aux>
+      <h1>{props.appTitle}</h1>
+      <p className={assignedClasses.join(" ")}>This is working</p>
+      <button className="{btnClass}" onClick={props.clicked}>
         Switch Name
       </button>
-    </div>
+    </Aux>
   );
 };
 
