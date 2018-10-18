@@ -7,12 +7,12 @@
 }
 
 .Button {
-    background-color: "green";
-    color: "white";
-    font: "inherit";
-    border: "1px solid blue";
-    padding: "16px";
-    cursor: "pointer";
+    background-color: green;
+    color: white;
+    font: inherit;
+    border: 1px solid blue;
+    padding: 16px;
+    cursor: pointer;
 }
 
 .Button:hover {
